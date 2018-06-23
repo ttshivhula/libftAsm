@@ -1,27 +1,27 @@
-global ft_isalpha
+global _ft_isalpha
 section .text
-ft_isalpha:
+_ft_isalpha:
 	push rbp
 	mov rbp, rsp
 	xor rax, rax
 cap:
-	cmp rdi, byte 65
+	cmp rdi, 0x41
 	jge cap2
 	jmp exit
 cap2:
-	cmp rdi, byte 90
+	cmp rdi, 0x5A
 	jle true
 	jmp low
 low:
-	cmp rdi, byte 97
+	cmp rdi, 0X61
 	jge low2
 	jmp exit
 low2:
-	cmp rdi, byte 122
+	cmp rdi, 0x7A
 	jle true
 	jmp exit
 true:
-	mov rax, 1
+	mov rax, 0x1
 exit:
 	leave
 	ret

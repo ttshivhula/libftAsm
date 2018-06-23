@@ -17,8 +17,8 @@ int	main(void)
 	printf("str: %s\n", ft_strcat(tt, "fuck"));
 	//test ft_isalpha
 	for (int i = 50; i < 130; i++)
-		printf("char: %c : %d\n", i, ft_isalpha(i));
-	int len = ft_puts(NULL);
+	printf("char: %c : %d\n", i, ft_isalpha(i));
+	int len = ft_puts("testing");
 	printf("printed: %d\n", len);
 	return (0);
 }

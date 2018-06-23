@@ -1,39 +1,44 @@
-global	ft_puts
-extern	strlen
+%define SYSCALL(n) 0x2000000 | n
+global	_ft_puts
+extern	_strlen
 section .text
-ft_puts:
+_ft_puts:
 	push rbp
 	mov rbp, rsp
 	test rdi, rdi
 	jz null
+norm:
 	push rdi
-	call strlen
+	call _strlen
 	pop rdi
 	push rax
-	mov rax, 4 ; write syscall
+	mov rax, SYSCALL(0x4)
 	push rdi
-	mov rbx, 1 ; file descriptor
-	pop rcx
+	pop rsi
+	mov rdi, 0x1
 	pop rdx
-	int 0x80
+	syscall
+	push rax
+	jmp newline
+null:
+	mov rax, SYSCALL(0x4)
+	lea rsi, [rel nul]
+	mov rdi, 0x1
+	mov rdx, len
+	syscall
+	push rax
 newline:
-	push rdx
-	mov rax, 4
-	mov rcx, line
-	mov rdx, 1
-	int 0x80
+	mov rax, SYSCALL(0x4)
+	mov rdi, 0x1
+	lea rsi, [rel nl]
+	mov rdx, 0x1
+	syscall
 	pop rax
 	inc rax
 exit:
 	leave
 	ret
-null:
-	mov rax, 4
-	mov rbx, 1
-	mov rcx, nul
-	mov rdx, 6
-	int 0x80
-	jmp newline
-section	.data
-	line db 10
+section .data
 	nul db "(null)"
+	len equ $ - nul
+	nl db 0xA
