@@ -1,11 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-void	ft_bzero(void *s, size_t n);
-char	*ft_strcat(char *s, char *s2);
-int	ft_isalpha(int c);
-int	ft_puts(char *s);
+#include "libfts.h"
 
 int	main(void)
 {
@@ -17,8 +13,12 @@ int	main(void)
 	printf("str: %s\n", ft_strcat(tt, "fuck"));
 	//test ft_isalpha
 	for (int i = 50; i < 130; i++)
-	printf("char: %c : %d\n", i, ft_isalpha(i));
-	int len = ft_puts("testing");
+		printf("char: %c : %d\n", i, ft_isalpha(i));
+	int len = ft_puts("testing puts");
 	printf("printed: %d\n", len);
+	for (int i = 38; i < 62; i++)
+		printf("digit: %c : %d\n", i, ft_isdigit(i));
+	for (int i = 40; i < 126; i++)
+		printf("isalnum: %c : %d\n", i, ft_isalnum(i));
 	return (0);
 }
