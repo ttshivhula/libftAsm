@@ -1,4 +1,4 @@
-extern	_strlen
+extern	_length
 global	_ft_strcat
 section	.text
 _ft_strcat:
@@ -8,11 +8,11 @@ _ft_strcat:
 destlen:
 	push rsi
 	push rdi
-	call _strlen
+	call _length
 	pop rdi
 	pop rsi
 cat:
-	cmp [rsi + r8], 0x0
+	cmp [rsi + r8], byte 0x0
 	je exit
 	mov r11, [rsi + r8]
 	mov [rdi + rax], r11
@@ -20,7 +20,7 @@ cat:
 	inc rax
 	jmp cat
 exit:
-	mov [rdi + rax], 0x0
+	mov [rdi + rax], byte 0x0
 	mov rax, rdi
 	leave
 	ret

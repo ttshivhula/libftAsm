@@ -1,6 +1,6 @@
 %define SYSCALL(n) 0x2000000 | n
 global	_ft_puts
-extern	_strlen
+extern	_length
 section .text
 _ft_puts:
 	push rbp
@@ -9,7 +9,7 @@ _ft_puts:
 	jz null
 norm:
 	push rdi
-	call _strlen
+	call _length
 	pop rdi
 	push rax
 	mov rax, SYSCALL(0x4)
