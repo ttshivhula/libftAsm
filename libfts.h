@@ -6,7 +6,7 @@
 /*   By: ttshivhu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 11:19:25 by ttshivhu          #+#    #+#             */
-/*   Updated: 2018/06/23 14:23:31 by ttshivhu         ###   ########.fr       */
+/*   Updated: 2018/06/23 14:30:22 by ttshivhu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	ft_isupper(int c);
 int	ft_islower(int c);
 int	ft_toupper(int c);
 int	ft_tolower(int c);
+int	ft_isascii(int c);
 
 #endif

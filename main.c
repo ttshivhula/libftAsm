@@ -34,6 +34,7 @@ int	main(void)
 	while (lower[++i])
 		printf("%c", ft_tolower(lower[i]));
 	printf("\n");
-
+	for (i = -3; i < 130; i++)
+		printf("ascii: %c : %d\n", i, ft_isascii(i));
 	return (0);
 }
