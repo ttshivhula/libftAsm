@@ -13,7 +13,9 @@
 NAME = libfts.a
 AS = nasm
 ASFLAGS = -f macho64
-SRC = $(wildcard *.s)
+SRC = bzero.s cat.s isacii.s isalnum.s isalpha.s isblank.s isdigit.s islower.s \
+	  isprint.s isupper.s len.s memcpy.s memset.s puts.s strcat.s strcmp.s \
+	  strdup.s strlen.s strncat.s tolower.s toupper.s
 
 OBJ = $(SRC:.s=.o)
 
