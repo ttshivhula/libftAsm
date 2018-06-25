@@ -8,7 +8,7 @@ int	main(void)
 	int i;
 	char	*s = ft_strdup("hello");
 	ft_bzero(s, 3);
-	printf("%c\n", s[2]);
+	printf("%c\n", s[4]);
 	char *tt = malloc(sizeof(char) * 1000);
 	strcpy(tt, "test");
 	printf("str: %s\n", ft_strcat(tt, "fuck"));
@@ -57,5 +57,10 @@ int	main(void)
 	printf("isblank: %c : %d\n", ' ', ft_isblank(' '));
 	printf("isblank: %c : %d\n", 'a', ft_isblank('a'));
 	printf("isblank: %c : %d\n", 'b', ft_isblank('b'));
+
+	s = malloc(500);
+	s = strcpy(s, "Tshilidzi");
+	printf("before strncat: %s ", s);
+	printf("After: %s\n", ft_strncat(s, "Tshivhula", 5));
 	return (0);
 }

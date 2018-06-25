@@ -6,7 +6,7 @@
 /*   By: ttshivhu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/23 11:19:25 by ttshivhu          #+#    #+#             */
-/*   Updated: 2018/06/25 15:08:52 by ttshivhu         ###   ########.fr       */
+/*   Updated: 2018/06/25 15:28:00 by ttshivhu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ char	*ft_strdup(char *s);
 void	ft_cat(int fd);
 int	ft_strcmp(const char *s1, const char *s2);
 int	ft_isblank(int n);
+char	*ft_strncat(char *s, const char *s2, size_t n);
 
 #endif
