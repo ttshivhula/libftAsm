@@ -4,7 +4,7 @@ _ft_strcmp:
 	push rbp
 	mov rbp, rsp
 	xor r8, r8
-cmp:
+loop:
 	cmp [rdi + r8], byte 0
 	je results
 	cmp [rsi + r8], byte 0
@@ -13,6 +13,7 @@ cmp:
 	cmp [rdi + r8], r9
 	jne results
 	inc r8
+	jmp loop
 results:
 	mov r10, [rdi + r8]
 	mov r11, [rsi + r8]
